@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link rel="stylesheet" href="../css/signUp.css" />
+    <script src="../js/login.js" defer></script>
+  </head>
+  <body>
+    <section class="container">
+      <section class="form-box">
+        <h1 class="title">Login</h1>
+        <section id="errorMsg"></section>
+        <form id="loginForm" class="signup" name="signupForm" method="POST">
+          <section class="input-group">
+            <section class="input-field">
+              <input
+                id="email"
+                class="input"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                required
+              />
+            </section>
+
+            <section class="input-field">
+              <input
+                id="password"
+                class="input"
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+                required
+              />
+            </section>
+          </section>
+
+          <section class="btn-group">
+            <button class="button login-btn" type="submit">Login</button>
+          </section>
+
+          <section id="loginStatus"></section>
+
+          <p class="link">
+            New here
+            <a href="../html/signUp.html">Click Here!</a>
+          </p>
+        </form>
+      </section>
+    </section>
+
+  </body>
+</html>
