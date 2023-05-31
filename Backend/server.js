@@ -2,8 +2,7 @@ const http = require('http');
 const url = require('url');
 const handleLoginRoute = require('./routers/loginRouter');
 const handleSignUpRoute = require('./routers/signUpRoute');
-const handleScoreRoute = require('./routers/addScoreRouter');
-const UserRouter = require('./routers/userRouter.js');
+
 
 const server = http.createServer((req, res) => {
   const { pathname } = url.parse(req.url, true);
