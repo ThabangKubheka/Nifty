@@ -7,8 +7,8 @@ document
   const password = document.getElementById("password").value;
 
   if (validateForm()) {
-    try {
-      const response = await fetch("https://thabanigame.azurewebsites.net/login", {
+    try {///........endpoint
+      const response = await fetch(".............", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -25,7 +25,7 @@ document
 
       if (result === "Login successful") {
         localStorage.setItem("userEmail", email);
-        window.location = '../pages/start.html';
+        ///........redirect;
       }
     } catch (error) {
       console.error("An error occurred:", error);

@@ -1,3 +1,3 @@
 const login = () => {
-  window.location = "../pages/Login.html";
+  window.location = "../html/login.html";
 };

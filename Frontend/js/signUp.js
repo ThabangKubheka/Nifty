@@ -7,8 +7,8 @@ document.getElementById("signUpForm").addEventListener("submit", async (e) => {
   const lastname = document.getElementById("lastname").value;
 
   if (validateForm()) {
-    try {
-      const response = await fetch("https://thabanigame.azurewebsites.net/signup", {
+    try {  ///........endpoint
+      const response = await fetch("......", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",

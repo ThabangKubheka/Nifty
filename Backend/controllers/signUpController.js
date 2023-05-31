@@ -1,4 +1,4 @@
-const { poolPromise, sql } = require('../db/db.js');
+const { poolPromise, sql } = require('../config.js');
 const crypto = require('crypto');
 
 const signUpUser = async (email, password, firstname, lastname) => {
