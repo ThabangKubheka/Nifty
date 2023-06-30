@@ -1,0 +1,25 @@
+.tab-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.tab {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f2f2f2;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100px;
+}
+
+.tab.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.tab:hover {
+  background-color: #ccc;
+}
