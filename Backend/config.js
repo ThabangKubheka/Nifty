@@ -1,9 +1,6 @@
 const sql = require('mssql');
-//fix connection
 const config = {
-    user: '',
-    password: '',
-    server: '',
+    server: 'BBD-KT\\SQLEXPRESS',
     database: '',
     options: {
       encrypt: false
