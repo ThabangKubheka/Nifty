@@ -28,7 +28,7 @@ function Auth() {
       <Name/>
       <TabSwitcher tabs={tabs} tabFunctions={tabFunctions}/>
       
-      {flag?<Register/>:<Login/>}
+      {flag?<Register/>:<div className='auth-login'><Login/></div>}
     </div>
   )
 }
