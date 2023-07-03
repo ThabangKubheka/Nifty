@@ -25,7 +25,6 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform registration logic here
     console.log('Registration submitted');
     console.log('Username:', username);
     console.log('Email:', email);
@@ -34,6 +33,7 @@ const Register = () => {
   };
 
   return (
+    <div className='main'>
     <div className="register-container">
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
@@ -81,6 +81,7 @@ const Register = () => {
           Sign Up
         </button>
       </form>
+    </div>
     </div>
   );
 };
