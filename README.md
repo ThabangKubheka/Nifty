@@ -51,8 +51,8 @@ This project is licensed under the MIT License.
 If you have any questions or suggestions regarding Nifty, please feel free to contact our support team at [#still-to-do#]. We are here to assist you and continuously improve our platform.
 
 ## Developers
-Thabang Kubheka (https://github.com/ThabangKubheka)
-Lusanda Mthiba (https://github.com/luslindo)
+1. Thabang Kubheka (https://github.com/ThabangKubheka)
+2. Lusanda Mthiba (https://github.com/luslindo)
 
 
 Thank you for choosing Nifty! We hope you have a great experience finding reliable contractors for your specific needs.
