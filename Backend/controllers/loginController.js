@@ -8,8 +8,9 @@ const loginUser = async (email, password) => {
     hash.update(password);
     const hashedPassword = hash.digest('hex');
 
+    //this is shit my boy update it my boy.
     const query = `
-      SELECT COUNT(*) AS userCount
+      SELECT COUNT(*) AS userCount   
       FROM Player
       WHERE email = @email
         AND password = @hashedPassword
