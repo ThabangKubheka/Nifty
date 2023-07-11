@@ -24,11 +24,11 @@ To get started with Nifty, follow these steps:
 6. If you find a suitable contractor, contact them through the provided contact information to discuss your project requirements.
 7. After completing a project with a contractor, leave a review and rating to help other customers make informed decisions.
 
-##Running the project locally
-1.Have VS code or any IDE of choice.
-2.Have node js and npm installed.
-3.Open the project, to run server type in cd frontend and then npm start
-4.The project will be running on http://localhost:3000/
+## Running the project locally
+1. Have VS code or any IDE of choice.
+2. Have node js and npm installed.
+3. Open the project, to run server type in cd frontend and then npm start
+4. The project will be running on http://localhost:3000/
 
 ## Technologies Used
 
