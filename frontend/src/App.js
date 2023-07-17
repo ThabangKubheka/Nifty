@@ -1,9 +1,9 @@
 import './App.css';
-import Home from './Home/Home';
+import Auth from './Authentication/Auth'
 
 function App() {
   return (
-    <Home/>
+    <Auth/>
   );
 }
 

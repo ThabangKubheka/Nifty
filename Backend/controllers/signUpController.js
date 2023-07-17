@@ -1,47 +1,37 @@
 const { poolPromise, sql } = require('../config.js');
-const crypto = require('crypto');
 
 const signUpUser = async (email, password, firstname, lastname) => {
   try {
+
+    if (!email || !password || !firstname || !lastname) {
+      return 'Missing required fields';
+    }
     const pool = await poolPromise;
 
     const checkQuery = `
       SELECT COUNT(*) AS userCount
-      FROM Player
-      WHERE email = @email
+      FROM users
+      WHERE email = @Email
     `;
     const checkResult = await pool.request()
-      .input('email', sql.VarChar(100), email)
+      .input('Email', sql.VarChar(100), email)
       .query(checkQuery);
 
     if (checkResult.recordset[0].userCount > 0) {
       return 'Email already exists';
     }
 
-    const hash = crypto.createHash('sha256');
-    hash.update(password);
-    const hashedPassword = hash.digest('hex');
-
     const insertQuery = `
-      INSERT INTO Player (email, firstname, lastname, password)
-      VALUES (@email, @firstname, @lastname, @hashedPassword)
+      INSERT INTO users (email, firstname, lastname, password)
+      VALUES (@email, @FirstName, @LastName, @Password)
     `;
     
     await pool.request()
       .input('email', sql.VarChar(100), email)
       .input('firstname', sql.VarChar(100), firstname)
       .input('lastname', sql.VarChar(100), lastname)
-      .input('hashedPassword', sql.VarChar(255), hashedPassword)
+      .input('password', sql.VarChar(255), password)
       .query(insertQuery);
-
-
-    const addPlayerScore = `
-    INSERT INTO Score (player_email)
-    VALUES (@email)
-  `;
-   await pool.request()
-  .input('email', sql.VarChar(100), email)
-  .query(addPlayerScore);
  
     return 'User created successfully';
   } catch (error) {

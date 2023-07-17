@@ -1,9 +1,10 @@
-const sql = require('mssql');
+const sql = require('mssql/msnodesqlv8');
 const config = {
     server: 'BBD-KT\\SQLEXPRESS',
-    database: '',
+    database: 'Nifty',
+    driver:'msnodesqlv8',
     options: {
-      encrypt: false
+      trustedConnection:true
     }
   };
 
