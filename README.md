@@ -47,6 +47,7 @@ We welcome contributions to enhance the functionality and usability of Nifty. To
 4. Test your changes thoroughly to maintain the overall quality of the project.
 5. Commit your changes and push them to your forked repository.
 6. Submit a pull request, describing the changes you have made and the problem it solves.
+7. The figma screens are located in the wireframe folder.
 
 ## License
 
