@@ -1,11 +1,12 @@
 const http = require('http');
 const url = require('url');
-const handleLoginRoute = require('./routers/loginRouter');
-const handleSignUpRoute = require('./routers/signUpRoute');
+const handleLoginRoute = require('./routes/loginRoute');
+const handleSignUpRoute = require('./routes/signUpRoute');
+
 
 
 const server = http.createServer((req, res) => {
-  const { pathname } = url.parse(req.url, true);
+const { pathname } = url.parse(req.url, true);
 
   
   res.setHeader('Access-Control-Allow-Origin', '*');

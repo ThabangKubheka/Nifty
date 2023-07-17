@@ -1,8 +1,11 @@
 import React from 'react'
+import Dashboard from './Dashboard'
+import Homepage from './Homepage'
+
 
 function Home() {
   return (
-    <div>Home</div>
+    <Dashboard component={<Homepage/>}/>
   )
 }
 

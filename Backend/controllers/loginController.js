@@ -1,29 +1,24 @@
 const { poolPromise, sql } = require('../config.js');
-const crypto = require('crypto');
 
 const loginUser = async (email, password) => {
   try {
     const pool = await poolPromise;
-    const hash = crypto.createHash('sha256');
-    hash.update(password);
-    const hashedPassword = hash.digest('hex');
 
-    //this is shit my boy update it my boy.
     const query = `
       SELECT COUNT(*) AS userCount   
-      FROM Player
+      FROM users
       WHERE email = @email
-        AND password = @hashedPassword
+        AND password = @password
     `;
     const result = await pool.request()
       .input('email', sql.VarChar(100), email)
-      .input('hashedPassword', sql.VarChar(255), hashedPassword)
+      .input('password', sql.VarChar(255),password)
       .query(query);
 
     if (result.recordset[0].userCount > 0) {
       return 'Login successful';
     } else {
-      return 'Invalid email or password';
+      return 'Invalid emaila or password';
     }
   } catch (error) {
     console.error('Error logging in:', error);
