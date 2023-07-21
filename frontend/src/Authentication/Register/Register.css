@@ -1,50 +1,54 @@
-.register-container {
+.reg-main{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  background-color: #f9d261;
-  padding: 20px;
-  border-radius: 25px;
+  margin-top: 10px;
 }
 
-.main {
-  display: flex;
-  justify-content: center;
-  margin: 60px;
-  height: 30vh;
-  
+.reg-container {
+  background-color: #f9d261;
+  border-radius: 25px;
+  width: 450px;
 }
 
 h1 {
-  color: #374785;
-  font-size: 24px;
-  margin-bottom: 20px;
+  text-align: center;
+}
+.re-user{
+  margin-left: 55px;
 }
 
-form {
+.re-email{
+  margin-left: 90px;
+}
+
+.re-password{
+  margin-left: 60px;
+}
+
+.re-form {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
+}
+.re-form-group {
+  display: flex;
+  align-items: center;;
 }
 
-.form-group {
-  margin-bottom: 15px;
-}
-
-label {
-  font-weight: bold;
-  color: #374785;
-}
-
-input {
-  width: 300px;
-  padding: 10px;
+.re-form-group input {
+  display: flex;
+  flex-direction: row;
   border: none;
   border-radius: 5px;
   background-color: #fff;
 }
+.re-form-group label {
+  font-weight: bold;
+  color: #374785;
+}
 
-.signup-button {
+
+.login-button {
   background-color: #374785;
   color: #f9d261;
   border: none;
@@ -55,6 +59,6 @@ input {
   transition: background-color 0.3s ease;
 }
 
-.signup-button:hover {
+.login-button:hover {
   background-color: #243256;
 }

@@ -1,46 +1,43 @@
-.main{ 
+.main{
   display: flex;
   justify-content: center;
-  margin: 60px;
-  height: 30vh;
+  margin-top: 24px;
 }
 
 .login-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background-color: #f9d261;
-  padding: 20px;
-  width: 440px;
   border-radius: 25px;
+  width: 450px;
 }
 
 h1 {
-  color: #374785;
-  font-size: 24px;
-  margin-bottom: 20px;
+  text-align: center;
 }
 
-form {
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.form-group {
-  margin-bottom: 15px;
+.form-group input {
+  display: flex;
+  flex-direction: row;
 }
 
-label {
+.email {
   font-weight: bold;
   color: #374785;
-  margin-right: 40px;
+  margin-right: 30px;
+}
+.password {
+  font-weight: bold;
+  color: #374785;
 }
 
 input {
-  width: 300px;
   padding: 10px;
+  margin: 10px;
   border: none;
   border-radius: 5px;
   background-color: #fff;
@@ -53,6 +50,7 @@ input {
   border-radius: 5px;
   padding: 10px 20px;
   font-size: 16px;
+  margin: 16px 0 ;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }

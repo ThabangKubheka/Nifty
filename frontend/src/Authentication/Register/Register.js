@@ -33,12 +33,12 @@ const Register = () => {
   };
 
   return (
-    <div className='main'>
-    <div className="register-container">
+    <div className='reg-main'>
+    <div className="reg-container">
       <h1>Register</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Username</label>
+      <form className='form' onSubmit={handleSubmit}>
+        <div className="re-form-group">
+          <label className='re-user'>Username</label>
           <input
             type="text"
             value={username}
@@ -47,8 +47,8 @@ const Register = () => {
             required
           />
         </div>
-        <div className="form-group">
-          <label>Email</label>
+        <div className="re-form-group">
+          <label className='re-email'>Email</label>
           <input
             type="email"
             value={email}
@@ -57,8 +57,8 @@ const Register = () => {
             required
           />
         </div>
-        <div className="form-group">
-          <label>Password</label>
+        <div className="re-form-group">
+          <label className='re-password'>Password</label>
           <input
             type="password"
             value={password}
@@ -67,8 +67,8 @@ const Register = () => {
             required
           />
         </div>
-        <div className="form-group">
-          <label>Confirm Password</label>
+        <div className="re-form-group">
+          <label className='conf-password'>Confirm Password</label>
           <input
             type="password"
             value={confirmPassword}
@@ -77,7 +77,7 @@ const Register = () => {
             required
           />
         </div>
-        <button type="submit" className="signup-button">
+        <button type="submit" className="login-button">
           Sign Up
         </button>
       </form>

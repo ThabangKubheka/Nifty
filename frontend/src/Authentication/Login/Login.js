@@ -57,9 +57,9 @@ const Login = () => {
     <div className='main'>
     <div className="login-container">
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Email</label>
+      <form className='form' onSubmit={handleSubmit}>
+        <div className="re-form-group">
+          <label className='email'>Email</label>
           <input
             type="email"
             value={email}
@@ -68,8 +68,8 @@ const Login = () => {
             required
           />
         </div>
-        <div className="form-group">
-          <label>Password</label>
+        <div className="re-form-group">
+          <label className='password'>Password</label>
           <input
             type="password"
             value={password}
