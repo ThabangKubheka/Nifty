@@ -1,0 +1,33 @@
+# Dependency directories
+node_modules/
+
+# Environment variables file
+.env
+
+# Compiled files
+*.log
+*.pid
+*.seed
+*.pem
+*.key
+*.crt
+
+# macOS
+.DS_Store
+
+# Editor/IDE files
+.vscode/
+.idea/
+
+# Testing and coverage directories
+coverage/
+.nyc_output/
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+npm-debug.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
