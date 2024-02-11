@@ -1,30 +1,12 @@
-const http = require('http');
-const url = require('url');
-const handleLoginRoute = require('./routes/loginRoute');
-const handleSignUpRoute = require('./routes/signUpRoute');
+require("dotenv").config();
+const express = require("express");
+const app = express();
+const userRouter = require("./api/users/user_router");
 
+app.use(express.json());
 
-
-const server = http.createServer((req, res) => {
-const { pathname } = url.parse(req.url, true);
-
-  
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-  if (pathname === '/login') {
-    handleLoginRoute(req, res);
-  }
-  else if (pathname === '/signup') {
-    handleSignUpRoute(req, res);
-  }
-   else {
-    res.writeHead(404, { 'Content-Type': 'text/plain' });
-    res.end('404 Not Found');
-  }
-});
-
-server.listen(3000, () => {
-  console.log('Server is running on port 3000');
+app.use("/api/users", userRouter);
+const port = process.env.PORT || 4000;
+app.listen(port, () => {
+  console.log("server up and running on PORT :", port);
 });
