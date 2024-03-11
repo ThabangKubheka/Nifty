@@ -10,6 +10,7 @@ const { hashSync, genSaltSync, compareSync } = require("bcrypt");
 const { sign } = require("jsonwebtoken");
 
 module.exports = {
+
   createUser: (req, res) => {
     const body = req.body;
     const salt = genSaltSync(10);
@@ -28,6 +29,7 @@ module.exports = {
       });
     });
   },
+
   login: (req, res) => {
     const body = req.body;
     getUserByUserEmail(body.email, (err, results) => {
@@ -59,6 +61,7 @@ module.exports = {
       }
     });
   },
+
   getUserByUserId: (req, res) => {
     const id = req.params.id;
     getUserByUserId(id, (err, results) => {
@@ -79,6 +82,7 @@ module.exports = {
       });
     });
   },
+  
   getUsers: (req, res) => {
     getUsers((err, results) => {
       if (err) {
@@ -91,6 +95,7 @@ module.exports = {
       });
     });
   },
+
   updateUsers: (req, res) => {
     const body = req.body;
     const salt = genSaltSync(10);
@@ -106,6 +111,7 @@ module.exports = {
       });
     });
   },
+
   deleteUser: (req, res) => {
     const data = req.body;
     deleteUser(data, (err, results) => {

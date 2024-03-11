@@ -3,7 +3,7 @@ const pool = require("../../config/database");
 module.exports = {
   create: (data, callBack) => {
     pool.query(
-      `insert into registration(firstName, lastName, gender, email, password, number) 
+      `insert into user(firstName, lastName, gender, email, password, number) 
                 values(?,?,?,?,?,?)`,
       [
         data.first_name,
@@ -21,9 +21,10 @@ module.exports = {
       }
     );
   },
+
   getUserByUserEmail: (email, callBack) => {
     pool.query(
-      `select * from registration where email = ?`,
+      `select * from user where email = ?`,
       [email],
       (error, results, fields) => {
         if (error) {
@@ -33,9 +34,10 @@ module.exports = {
       }
     );
   },
+
   getUserByUserId: (id, callBack) => {
     pool.query(
-      `select id,firstName,lastName,gender,email,number from registration where id = ?`,
+      `select id,firstName,lastName,gender,email,number from user where id = ?`,
       [id],
       (error, results, fields) => {
         if (error) {
@@ -45,9 +47,10 @@ module.exports = {
       }
     );
   },
+
   getUsers: callBack => {
     pool.query(
-      `select id,firstName,lastName,gender,email,number from registration`,
+      `select id,firstName,lastName,gender,email,number from user`,
       [],
       (error, results, fields) => {
         if (error) {
@@ -57,9 +60,10 @@ module.exports = {
       }
     );
   },
+
   updateUser: (data, callBack) => {
     pool.query(
-      `update registration set firstName=?, lastName=?, gender=?, email=?, password=?, number=? where id = ?`,
+      `update user set firstName=?, lastName=?, gender=?, email=?, password=?, number=? where id = ?`,
       [
         data.first_name,
         data.last_name,
@@ -77,9 +81,10 @@ module.exports = {
       }
     );
   },
+
   deleteUser: (data, callBack) => {
     pool.query(
-      `delete from registration where id = ?`,
+      `delete from user where id = ?`,
       [data.id],
       (error, results, fields) => {
         if (error) {

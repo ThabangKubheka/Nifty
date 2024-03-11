@@ -1,12 +1,34 @@
-const { createPool } = require("mysql");
+const mysql = require('mysql');
 
-const pool = createPool({
-  host: process.env.MYSQL_HOST,
-  port: process.env.MYSQL_PORT,
-  user: process.env.MYSQL_USER,
-  password: process.env.MYSQL_PASSWORD,
-  database: process.env.MYSQL_DATABASE,
-  connectionLimit: 10
-});
+const config = {
+  host: 'localhost',
+  port: 3306,
+  database: 'NIFTY',
+  user: 'Thabang',
+  password: 'Swazi'
+};
 
-module.exports = pool;
+async function testDatabaseConnection() {
+  try {
+    const connection = mysql.createConnection(config);
+
+    connection.connect((err) => {
+      if (err) {
+        console.error('Error connecting to MySQL database:', err.stack);
+        return;
+      }
+      console.log('Connected to MySQL database');
+      connection.end((err) => {
+        if (err) {
+          console.error('Error closing MySQL connection:', err.stack);
+          return;
+        }
+        console.log('Connection closed');
+      });
+    });
+  } catch (err) {
+    console.error('Error:', err.message);
+  }
+}
+
+testDatabaseConnection();
