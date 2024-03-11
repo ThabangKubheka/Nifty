@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { register, login } = require('./api/customers/customer_controller');
+const { register, login, updateDetails, deleteUser } = require('./api/customers/customer_controller');
 
 const app = express();
 const PORT = 3000;
@@ -9,6 +9,10 @@ app.use(bodyParser.json());
 
 app.post('/register', register);
 app.post('/login', login);
+app.put('/update/:email', updateDetails);
+app.delete('/delete/:email', deleteUser);
+
+
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
