@@ -1,12 +1,20 @@
-require("dotenv").config();
-const express = require("express");
+const express = require('express');
+const bodyParser = require('body-parser');
+const { register, login } = require('./api/customers/customer_controller');
+
 const app = express();
-const userRouter = require("./api/users/user_router");
+const PORT = 3000;
 
-app.use(express.json());
+app.use(bodyParser.json());
 
-app.use("/api/users", userRouter);
-const port = process.env.PORT || 4000;
-app.listen(port, () => {
-  console.log("server up and running on PORT :", port);
+app.post('/register', register);
+app.post('/login', login);
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Something went wrong!' });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
