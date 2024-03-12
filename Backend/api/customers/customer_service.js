@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 const mysql = require('mysql');
 const config = require('../../config/database');
-const {generateToken} = require('../../auth/token_validation')
+const {generateToken, verifyToken} = require('../../auth/token_validation')
 
 function getConnection() {
   return mysql.createConnection(config);
@@ -56,6 +56,13 @@ async function login(username, password) {
 }
 
 async function updateDetails(userId, newDetails) {
+
+  // try {
+  //   await verifyToken(token);
+  // } catch (error) {
+  //   throw new Error('Invalid token');
+  // }
+
   const { email, password } = newDetails;
 
   return new Promise((resolve, reject) => {
@@ -107,6 +114,13 @@ async function updateDetails(userId, newDetails) {
 }
 
 async function deleteUser(email) {
+
+  // try {
+  //   await verifyToken(token);
+  // } catch (error) {
+  //   throw new Error('Invalid token');
+  // }
+
   return new Promise((resolve, reject) => {
     const connection = getConnection();
     connection.connect();
