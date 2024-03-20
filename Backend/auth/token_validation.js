@@ -17,8 +17,28 @@ function verifyToken(token) {
 }
 
 
+async function authToken(req, res, next) {
+  const authHeader = req.headers['authorization'];
+
+  if (!authHeader) {
+    return res.sendStatus(401);
+  }
+
+  const token = authHeader.split(' ')[1];
+
+  try {
+    const decoded = await verifyToken(token);
+    console.log('Decoded', decoded);
+    req.user = decoded;
+    next();
+  } catch (error) {
+    console.error('Error verifying token:', error);
+    return res.sendStatus(403);
+  }
+}
+
 
 module.exports = {
   generateToken,
-  verifyToken
+  authToken
 };
