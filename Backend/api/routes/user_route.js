@@ -2,7 +2,14 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/user_controller');
 const { authToken } = require('../../auth/token_validation');
+const rateLimit = require("express-rate-limit");
 
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100
+});
+
+router.use(limiter);
 
 router.post('/user', userController.createUser);
 router.post('/login', userController.login);
