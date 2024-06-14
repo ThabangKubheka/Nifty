@@ -8,4 +8,4 @@ const config = {
   connectionLimit: process.env.CONNECTION_LIMIT
 };
 
-module.exports = config;
+export default config;

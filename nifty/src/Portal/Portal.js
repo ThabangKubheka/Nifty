@@ -2,6 +2,7 @@ import { useState, React } from 'react';
 import TabSwitcher from '../Common//components/TabSwitcher/TabSwitcher';
 import Register from './Authentication/Register';
 import Login from './Authentication/Login';
+import './Portal.css'
 
 const Portal = () => {
   const tabs = ['Login', 'Sign-up',];

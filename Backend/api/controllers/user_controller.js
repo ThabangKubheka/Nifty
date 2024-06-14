@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const mysql = require('mysql');
-const config = require('../../config/database');
+const config = require('../../config/database').default;
 const { generateToken } = require('../../auth/token_validation');
 
 const pool = mysql.createPool(config);

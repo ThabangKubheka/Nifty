@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Auth.css';
+import { login } from '../../Services/Services';
 
 
 const LoginPortal = () => {
@@ -15,8 +16,9 @@ const LoginPortal = () => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const signIn =async (username, password) => {
+    await login(username, password);
+    alert('Hi')
   };
 
   return (
@@ -27,10 +29,10 @@ const LoginPortal = () => {
 
         <h1>Login</h1>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={signIn}>
 
           <div className="form-group">
-            
+
             <label>Email</label>
             <input
               type="email"
@@ -57,7 +59,7 @@ const LoginPortal = () => {
 
           <div className="auth-button-container">
 
-            <button type="submit" className="auth-button">
+            <button type="submit" className="auth-button" onClick={signIn}>
               Login
             </button>
 

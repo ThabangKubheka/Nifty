@@ -8,17 +8,14 @@
   display: inline-block;
   padding: 10px 20px;
   background-color: #f2f2f2;
-  color: #333;
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: 100px;
+  font-weight: 700;
 }
 
 .tab.active {
-  background-color: #333;
+  border-bottom: 2px solid black;
+  background-color: #f9d261;
   color: #fff;
-}
-
-.tab:hover {
-  background-color: #ccc;
 }
