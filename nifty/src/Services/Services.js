@@ -25,7 +25,6 @@ const login = async (username,password) => {
     },
     body: JSON.stringify({ username, password })
   });
-` `
   if (response.ok) {
     const data = await response.json();
     console.log('Login successful:', data);

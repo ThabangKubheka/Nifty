@@ -5,13 +5,12 @@ const { generateToken } = require('../../auth/token_validation');
 
 const pool = mysql.createPool(config);
 
-async function createUser(req, res) {
+const createUser = async (req, res) => {
 
   try {
 
     const username = req.body.username;
     const password = req.body.password;
-
     const hashedPassword = await bcrypt.hash(password, 10);
 
     pool.getConnection(async (err, connection) => {
@@ -49,7 +48,7 @@ async function createUser(req, res) {
   }
 }
 
-async function registerUser(req, res) {
+const registerUser = async (req, res) => {
   try {
     const { username, name, surname, email, cellphone, address } = req.body;
 
@@ -101,7 +100,7 @@ async function registerUser(req, res) {
   }
 }
 
-async function checkEligibility(req, res) {
+const checkEligibility = async (req, res) => {
 
   try {
     const username = req.params.username;
@@ -131,7 +130,7 @@ async function checkEligibility(req, res) {
   }
 }
 
-async function getUserInfo(req, res) {
+const getUserInfo = async (req, res) => {
   try {
     const username = req.params.username;
 
@@ -160,7 +159,7 @@ async function getUserInfo(req, res) {
 
 }
 
-async function login(req, res) {
+const login = async (req, res) => {
 
   try {
 
@@ -204,7 +203,7 @@ async function login(req, res) {
   }
 }
 
-async function updateUser(req, res) {
+const updateUser = async (req, res) => {
   try {
     const { username } = req.params;
     const { name, surname, email, cellphone, address } = req.body;
@@ -235,7 +234,7 @@ async function updateUser(req, res) {
   }
 }
 
-async function deleteUser(req, res) {
+const deleteUser = async (req, res) => {
   try {
     const username = req.params.username;
     const password = req.body.password;
@@ -299,7 +298,7 @@ async function deleteUser(req, res) {
   }
 }
 
-async function updatePassword(req, res) {
+const updatePassword = async (req, res) => {
   try {
     const username = req.params.username;
     const currentPassword = req.body.password;

@@ -1,10 +1,10 @@
 const jwt = require('jsonwebtoken');
 
-function generateToken(payload) {
+const generateToken = (payload) => {
   return jwt.sign(payload, 'your_secret_key', { expiresIn: '1h' });
 }
 
-function verifyToken(token) {
+const verifyToken = (token) => {
   return new Promise((resolve, reject) => {
     jwt.verify(token, 'your_secret_key', (err, decoded) => {
       if (err) {
@@ -16,8 +16,7 @@ function verifyToken(token) {
   });
 }
 
-
-async function authToken(req, res, next) {
+const authToken = async (req, res, next) => {
   const authHeader = req.headers['authorization'];
 
   if (!authHeader) {
@@ -36,7 +35,6 @@ async function authToken(req, res, next) {
     return res.sendStatus(403);
   }
 }
-
 
 module.exports = {
   generateToken,
